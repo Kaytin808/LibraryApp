@@ -20,8 +20,10 @@ myLibrary.push(bookInfo)
 // reset forms after submitting //
 document.forms[0].reset(); 
 for (i = 0; i < myLibrary.length; i++) {
-    console.log(myLibrary[i]);
+    console.log(myLibrary[i])
+    
 }
+
 }
 function addBtn() {
     var form = document.getElementById('myForm');
@@ -33,3 +35,8 @@ function closeBtn() {
 }
 var submitBtn = document.querySelector('.submit-btn');
 submitBtn.addEventListener('click',addBook)
+
+var container = document.getElementById('book-shelf')
+     var div = document.createElement('div')
+     div.classList.add('cell')
+     container.appendChild(div);
