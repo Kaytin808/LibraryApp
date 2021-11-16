@@ -19,8 +19,17 @@ for (i = 0; i < myLibrary.length; i++) {
     console.log(myLibrary[i])
     var container = document.getElementById('book-shelf')
      var div = document.createElement('div')
+     var divT = document.createElement('p')
+     var divA = document.createElement('p')
+     var divP = document.createElement('p')
      div.classList.add('cell')
+     divT.innerHTML = `${title.value}`
+     divA.innerHTML = `${author.value}`
+     divP.innerHTML = `${pages.value}`
      container.appendChild(div);
+     div.appendChild(divT)
+     div.appendChild(divA)
+     div.appendChild(divP)
 }
 // reset forms after submitting //
 document.forms[0].reset();
