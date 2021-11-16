@@ -6,7 +6,11 @@ function Book() {
 }
 
 function addBookToLibrary() {
-    // do stuff here..
+    var userInput = '';
+    var title = document.getElementById('title').value;
+    var author = document.getElementById('author').value;
+    var pages = document.getElementById('pages').value;
+    console.log(title,author,pages)
 }
 
 function addBtn() {
