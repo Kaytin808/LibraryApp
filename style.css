@@ -111,17 +111,6 @@ input[type=text] {
 	position:relative;
 	top:1px;
 }
-.card1 {
-    display: flex;
-    width: 10%;
-    height: 13em;
-    text-align: center;
-    gap: 14px;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    border: 3px solid black;
-}
 #book-shelf {
     width: 120em;
     right: 76em;
@@ -138,6 +127,7 @@ input[type=text] {
     justify-content: center;
     align-items: center;
     height: 0em;
+    margin-top: -37em;
 }
 .cell {
     text-align: center;
