@@ -26,8 +26,7 @@ input[type=text] {
     display: none;
     width: 25%;
     justify-content: center;
-    height: 400px;
-    margin-left: 45em;
+    height: 500px;
     background-color: #92ea92;
     border-radius: 15px;
   }
@@ -68,7 +67,7 @@ input[type=text] {
 }
 .x-container {
     position: absolute;
-    top: 21em;
+    top: 6em;
     right: 46em;
 }
 .x {
@@ -121,4 +120,19 @@ input[type=text] {
     align-items: center;
     gap: 30px;
     border: 3px solid black;
+}
+.book-shelf {
+    width: 42em;
+    position: absolute;
+    right: 76em;
+    height: 30em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4,1fr);
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0em;
 }

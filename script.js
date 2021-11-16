@@ -19,7 +19,7 @@ let bookInfo = {
 myLibrary.push(bookInfo)
 document.forms[0].reset();
 var para = document.getElementById('text');
-para.textContent = '\n' + JSON.stringify(myLibrary, '\t', 2)
+para.textContent = bookInfo.title + bookInfo.author + bookInfo.pages;
 
 }
 function addBtn() {
