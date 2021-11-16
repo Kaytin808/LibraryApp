@@ -17,10 +17,11 @@ let bookInfo = {
     pages: document.getElementById('pages').value,
 }
 myLibrary.push(bookInfo)
-document.forms[0].reset();
-var para = document.getElementById('text');
-para.textContent = bookInfo.title + bookInfo.author + bookInfo.pages;
-
+// reset forms after submitting //
+document.forms[0].reset(); 
+for (i = 0; i < myLibrary.length; i++) {
+    console.log(myLibrary[i]);
+}
 }
 function addBtn() {
     var form = document.getElementById('myForm');
