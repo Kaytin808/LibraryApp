@@ -123,10 +123,9 @@ input[type=text] {
     border: 3px solid black;
 }
 .book-shelf {
-    width: 42em;
-    position: absolute;
+    width: 120em;
     right: 76em;
-    height: 30em;
+    height: 37em;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4,1fr);
@@ -136,4 +135,9 @@ input[type=text] {
     justify-content: center;
     align-items: center;
     height: 0em;
+}
+.cell {
+    text-align: center;
+    height: 20em;
+    width: 16em;
 }
