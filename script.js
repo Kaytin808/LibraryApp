@@ -9,7 +9,11 @@ function addBookToLibrary() {
     // do stuff here..
 }
 
-function createBook() {
+function addBtn() {
     var form = document.getElementById('myForm');
     form.style.display = 'flex' ;
+}
+function closeBtn() {
+    var form = document.getElementById('myForm');
+    form.style.display = 'none';
 }

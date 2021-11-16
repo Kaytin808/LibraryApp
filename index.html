@@ -11,12 +11,15 @@
     <div class="header-container">
     <header class="library-text">Library 📚</header>
     <div class="add-btn-container">
-    <button onclick="createBook()" class="add-book">Add +</button>
+    <button onclick="addBtn()" class="add-book">Add +</button>
     
 </div>
 </div>
 <div class ="form-popup" id ="myForm">
     <form>
+        <div class="x-container">
+        <button onclick="closeBtn()" class="x">×</button>
+    </div>
       <label for="title">Title</label></br>
     <input type="text" id="title" name="title"><br>
     <label for ="author">Author</label><br>
