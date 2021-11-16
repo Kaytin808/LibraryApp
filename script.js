@@ -10,5 +10,6 @@ function addBookToLibrary() {
 }
 
 function createBook() {
-
+    var form = document.getElementById('myForm');
+    form.style.display = 'flex' ;
 }

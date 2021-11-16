@@ -22,7 +22,7 @@ input[type=text] {
     box-sizing: border-box;
   }
   .form-popup {
-    display: flex;
+    display: none;
     width: 25%;
     justify-content: center;
     height: 400px;
