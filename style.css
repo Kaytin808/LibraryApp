@@ -15,10 +15,55 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: italic;
 }
+input[type=text] {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  .form-popup {
+    display: flex;
+    width: 25%;
+    justify-content: center;
+    height: 400px;
+    margin-left: 45em;
+    background-color: #92ea92;
+    border-radius: 15px;
+  }
+  form {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    color: rgb(88, 87, 87);
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
 .add-btn-container {
     display: flex;
     justify-content: center;
     padding: 45px;
+}
+.submit-btn {
+    background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:28px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.submit-btn:hover {
+    background-color:#5cbf2a;
+}
+.submit-btn:active {
+    position:relative;
+	top:1px;
 }
 .add-book {
     background-color:#44c767;
