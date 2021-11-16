@@ -9,7 +9,7 @@ this.pages=pages;
 
 const addBook = (ev) => {
     ev.preventDefault();
-}
+
 
 let bookInfo = {
     title: document.getElementById('title').value,
@@ -18,8 +18,10 @@ let bookInfo = {
 }
 myLibrary.push(bookInfo)
 document.forms[0].reset();
-localStorage.setItem('MyBookList', JSON.stringify(myLibrary) );
+var para = document.getElementById('text');
+para.textContent = '\n' + JSON.stringify(myLibrary, '\t', 2)
 
+}
 function addBtn() {
     var form = document.getElementById('myForm');
     form.style.display = 'flex' ;
