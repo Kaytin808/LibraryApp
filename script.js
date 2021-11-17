@@ -12,7 +12,8 @@ const addBook = (ev) => {
 let bookInfo = {
     title: document.getElementById('title').value,
     author: document.getElementById('author').value,
-    pages: document.getElementById('pages').value
+    pages: document.getElementById('pages').value,
+    boxRead: document.getElementById('checkBox').value
 }
 myLibrary.push(bookInfo);
 for (i = 0; i < myLibrary.length; i++) {
@@ -22,29 +23,41 @@ for (i = 0; i < myLibrary.length; i++) {
      var divT = document.createElement('p')
      var divA = document.createElement('p')
      var divP = document.createElement('p')
+     var divRead = document.createElement('button')
+     var checkBox = document.getElementById('checkBox')
      div.classList.add('cell')
      divT.innerHTML = `${title.value}`
      divA.innerHTML = `${author.value}`
      divP.innerHTML = `${pages.value}`
+     if (checkBox.checked == true) {
+         divRead.innerHTML = 'Already Read'
+     } else {
+         divRead.innerHTML = 'Not read yet'
+     }
+
      container.appendChild(div);
      div.appendChild(divT)
      div.appendChild(divA)
      div.appendChild(divP)
+     div.appendChild(divRead)
 }
 // reset forms after submitting //
 document.forms[0].reset();
+localStorage.setItem('myBookList',JSON.stringify(myLibrary) );
 }
-
 
 function addBtn() {
     var form = document.getElementById('myForm');
     form.style.display = 'flex' ;
 }
-function closeBtn() {
-    var form = document.getElementById('myForm');
-    form.style.display = 'none';
-}
 var submitBtn = document.querySelector('.submit-btn');
 submitBtn.addEventListener('click',addBook)
 
-// Book-shelf cards //
+var readBtn = document.getElementById('readBtn')
+
+var closeBtn = document.querySelector('.x');
+closeBtn.addEventListener('click', (event)=> {
+    event.preventDefault();
+    var form = document.getElementById('myForm')
+    form.style.display = 'none';
+})

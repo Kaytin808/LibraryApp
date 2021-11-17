@@ -129,6 +129,9 @@ input[type=text] {
     height: 0em;
     margin-top: -37em;
 }
+p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .cell {
     text-align: center;
     height: 20em;
