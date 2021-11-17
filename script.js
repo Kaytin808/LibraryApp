@@ -8,6 +8,8 @@ this.pages=pages;
 }
 const addBook = (ev) => {
     ev.preventDefault();
+    var form = document.getElementById('myForm');
+    form.style.display= 'none';
     let myLibrary = [];
 let bookInfo = {
     title: document.getElementById('title').value,
@@ -61,3 +63,4 @@ closeBtn.addEventListener('click', (event)=> {
     var form = document.getElementById('myForm')
     form.style.display = 'none';
 })
+
