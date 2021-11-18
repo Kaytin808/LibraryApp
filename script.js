@@ -35,7 +35,7 @@ console.log(myLibrary)
      divT.classList.add('title')
      divT.innerHTML = `${title.value}`
      divA.innerHTML = `${author.value}`
-     divP.innerHTML = `${pages.value}`.indexOf(`${pages.value}`)
+     divP.innerHTML = `${pages.value}`
      divX.innerHTML = '×'
      divX.dataset.name = `${title.value}`
      div.dataset.name = `${title.value}`
@@ -50,6 +50,13 @@ console.log(myLibrary)
     } else {
         divRead.innerHTML = 'Not read yet'
     }
+    divRead.addEventListener('click',() => {
+        if (divRead.innerHTML == 'Already Read') {
+            divRead.innerHTML = 'Not read yet'
+        } else {
+            divRead.innerHTML = 'Already Read'
+        }
+    })
     var removeBtn = document.querySelectorAll('.remove-book')
     removeBtn.forEach(books => {
         books.addEventListener('click',() => {
@@ -59,7 +66,9 @@ console.log(myLibrary)
     })
     
 }
-
+// reset forms after submit //
+document.forms[0].reset();
+localStorage.setItem('myBookList',JSON.stringify(myLibrary) );
 // add button to open forms //
 function addBtn() {
     var addBtn = document.getElementById('myForm')
