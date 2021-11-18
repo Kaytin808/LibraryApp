@@ -8,6 +8,8 @@ function Book(title,author,pages,) {
 }
 
 function addBookToLibrary() {
+    var form = document.getElementById('myForm')
+    form.style.display='none';
     let bookInfo = {
     title: document.getElementById('title').value,
     author: document.getElementById('author').value,
@@ -16,10 +18,9 @@ function addBookToLibrary() {
 myLibrary.push(bookInfo)
 
 myLibrary.forEach(book =>  {
-    console.log(myLibrary)
+
 });
-
-
+console.log(myLibrary)
      var container = document.getElementById('book-shelf')
      var div = document.createElement('div')
      var divT = document.createElement('p')
@@ -57,10 +58,8 @@ function addBtn() {
     var addBtn = document.getElementById('myForm')
     addBtn.style.display = 'flex';
 }
-function closeBtn(ev) {
-    ev.preventDefault();
-var closeBtn = document.querySelector('.x');
-closeBtn.style.display=none;
-console.log('should work')
+function closeBtn() {
+var form = document.getElementById('myForm')
+form.style.display='none';
 }
 var readBtn = document.getElementById('readBtn')
