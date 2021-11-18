@@ -52,6 +52,11 @@ for (i = 0; i < myLibrary.length; i++) {
      div.appendChild(divP)
      div.appendChild(divRead)
      div.appendChild(divX)
+     var removeBtn = document.querySelector('.remove-book')
+removeBtn.addEventListener('click',() => {
+    if (divX.dataset.name === div.dataset.name)
+    console.log('this is clicked to be true!')
+})
 }
 // reset forms after submitting //
 document.forms[0].reset();
