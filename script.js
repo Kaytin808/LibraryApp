@@ -35,7 +35,7 @@ console.log(myLibrary)
      divT.classList.add('title')
      divT.innerHTML = `${title.value}`
      divA.innerHTML = `${author.value}`
-     divP.innerHTML = `${pages.value}`
+     divP.innerHTML = `${pages.value}`.indexOf(`${pages.value}`)
      divX.innerHTML = '×'
      divX.dataset.name = `${title.value}`
      div.dataset.name = `${title.value}`
@@ -50,7 +50,14 @@ console.log(myLibrary)
     } else {
         divRead.innerHTML = 'Not read yet'
     }
-
+    var removeBtn = document.querySelectorAll('.remove-book')
+    removeBtn.forEach(books => {
+        books.addEventListener('click',() => {
+    if (divX.dataset.name === div.dataset.name)
+    div.remove(div)
+    })
+    })
+    
 }
 
 // add button to open forms //
@@ -63,3 +70,4 @@ var form = document.getElementById('myForm')
 form.style.display='none';
 }
 var readBtn = document.getElementById('readBtn')
+
