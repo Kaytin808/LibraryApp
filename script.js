@@ -1,38 +1,79 @@
-let myLibrary = [];
-
+ let myLibrary = [];
 
 //Constructor//
 function Book(title,author,pages,) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
+    this.title = title.value;
+    this.author = author.value;
+    this.pages = pages.value;
 }
-
 
 function addBookToLibrary() {
+    var form = document.getElementById('myForm')
+    form.style.display='none';
 
-    let bookInfo = {
-    title: document.getElementById('title').value,
-    author: document.getElementById('author').value,
-    pages: document.getElementById('pages').value
+    const book = new Book(title,author,pages)
+    myLibrary.push(book)
+    displayBooks(book)
+    console.log(myLibrary)
 }
-myLibrary.push(bookInfo)
+function displayBooks(book) {
+    var bookShelf = document.getElementById('book-shelf')
+    var bookCell = document.createElement('div')
+    bookCell.classList.add('cell')
+    var divT = document.createElement('p')
+    divT.classList.add('title')
+    var divA = document.createElement('p')
+    var divP = document.createElement('p')
+    var btnContainer = document.createElement('div')
+    btnContainer.classList.add('btn-container')
+    var divRead = document.createElement('button')
+    divRead.classList.add('readBox')
+    var divX = document.createElement('button')
+    divX.setAttribute('data-index-number',myLibrary.indexOf(book))
 
+    divX.classList.add('remove-book')
+    divT.innerHTML = `${title.value}`
+    divA.innerHTML = `${author.value}`
+    divP.innerHTML = `${pages.value}` + ' pages'
+    divX.innerHTML = '×'
+    bookShelf.appendChild(bookCell)
+    bookCell.appendChild(divT)
+    bookCell.appendChild(divA)
+    bookCell.appendChild(divP)
+    bookCell.appendChild(divRead)
+    bookCell.appendChild(divX)
+    bookCell.appendChild(btnContainer)
+    // Form reset after pressing submit //
+    document.forms[0].reset();
+
+divX.onclick = function(e) {
+    var itemIndex = this.getAttribute('data-index-number')
+    myLibrary.splice(itemIndex,1)
+    e.target.parentElement.remove()
+    console.log(myLibrary)
+}
+    if (checkBox.checked == true) {
+        divRead.innerHTML = 'Already read'
+    } else {
+        divRead.innerHTML = 'Not read yet'
+    }
+    divRead.addEventListener('click', () => {
+        if (divRead.innerHTML == 'Already read') {
+            divRead.innerHTML = 'Not read yet'
+        } else {
+            divRead.innerHTML= 'Already read'
+        }
+    })
 
 }
-function test() {
-    myLibrary.forEach(function(i){
-          console.log(i);
-        })}
-// add button to open forms //
+
+// add/close button to open forms //
 function addBtn() {
     var addBtn = document.getElementById('myForm')
     addBtn.style.display = 'flex';
 }
-function closeBtn(ev) {
-    ev.preventDefault();
-var closeBtn = document.querySelector('.x');
-closeBtn.style.display=none;
-console.log('should work')
+function closeBtn() {
+    var form = document.getElementById('myForm')
+form.style.display='none';
 }
-
+    var readBtn = document.getElementById('readBtn')
