@@ -8,3 +8,5 @@ Some things I learned from this project,
 - Using DOM to take input forms on submit and pass it over to view on the webpage
 - Setting an if/else statement on whether I have checked the readStatus to change
 - Removing the array upon targeted book and removing the book off display cell
+
+![MyLibrary](https://i.ibb.co/5GfDGPH/Untitled.png)
