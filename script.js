@@ -1,26 +1,33 @@
 myLibrary = [];
 
 //Constructor//
-function Book(title,author,pages,) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
+class Book {
+    constructor(title,author,pages) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+    }
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(item) {
     var form = document.getElementById('myForm')
     form.style.display='none';
+
     let bookInfo = {
     title: document.getElementById('title').value,
     author: document.getElementById('author').value,
     pages: document.getElementById('pages').value
 }
-myLibrary.push(bookInfo)
+    if (bookInfo.title == '') {
+        alert('you entered nothing!')
+    } else {
+        myLibrary.push(bookInfo)
+        addBook();
+        document.forms[0].reset();
+    }
 
-myLibrary.forEach(book =>  {
-
-});
 console.log(myLibrary)
+function addBook() {
      var container = document.getElementById('book-shelf')
      var div = document.createElement('div')
      var divT = document.createElement('p')
@@ -37,8 +44,9 @@ console.log(myLibrary)
      divA.innerHTML = `${author.value}`
      divP.innerHTML = `${pages.value}`
      divX.innerHTML = '×'
-     divX.dataset.name = `${title.value}`
-     div.dataset.name = `${title.value}`
+     // Give id to index of the book I just made //
+
+
      container.appendChild(div);
      div.appendChild(divT)
      div.appendChild(divA)
@@ -59,16 +67,16 @@ console.log(myLibrary)
     })
     var removeBtn = document.querySelectorAll('.remove-book')
     removeBtn.forEach(books => {
-        books.addEventListener('click',() => {
-    if (divX.dataset.name === div.dataset.name)
-    div.remove(div)
+    books.addEventListener('click', (e)=> {
+     e.target.parentElement.remove()
+     myLibrary.splice(myLibrary.indexOf(item));
+
     })
     })
-    
+}
 }
 // reset forms after submit //
 document.forms[0].reset();
-localStorage.setItem('myBookList',JSON.stringify(myLibrary) );
 // add button to open forms //
 function addBtn() {
     var addBtn = document.getElementById('myForm')
@@ -79,4 +87,3 @@ var form = document.getElementById('myForm')
 form.style.display='none';
 }
 var readBtn = document.getElementById('readBtn')
-
