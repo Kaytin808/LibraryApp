@@ -25,14 +25,14 @@
         <button type="button" onclick="closeBtn()" class="x">×</button>
     </div>
       <label for="title">Title</label></br>
-    <input type="text" id="title" name="title"><br>
+    <input type="text" id="title" name="title" required><br>
     <label for ="author">Author</label><br>
-    <input type="text" id = author name="author"><br>
+    <input type="text" required id = author name="author"><br>
     <label for ="author">Pages</label><br>
-    <input type="text" id = pages name="pages"><br>
+    <input type="text" pattern="[0-9]+" oninvalid="setCustomValidity('Numbers only')"  required id = pages name="pages"><br>
     <label for ="author">Read yet?</label>
     <input type="checkbox" value="on" id = checkBox name="checkBox"><br>
-    <button type="button" onclick="addBookToLibrary();" class="submit-btn">Submit</button>
+    <button type="submit" class="submit-btn">Submit</button>
       </form>
     </div>
   </div>
