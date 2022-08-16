@@ -37,6 +37,7 @@ authorField.addEventListener('change', (event)=> {
     titleField.addEventListener('invalid', function (event) {
     if (event.target.validity.valueMissing) {
         event.target.setCustomValidity("Title can't be empty")
+
     }
 })
 titleField.addEventListener('change', function (event) {
